@@ -13,6 +13,8 @@ target/
 *.iml
 *.ipr
 
+!**/target
+
 ### Eclipse ###
 .apt_generated
 .classpath
@@ -37,3 +39,5 @@ build/
 
 ### Mac OS ###
 .DS_Store
+/AnnotationProcessor/target/
+/Service/target/
