@@ -20,13 +20,13 @@ import java.util.stream.Collectors;
 import java.util.stream.LongStream;
 
 
+
 @SupportedAnnotationTypes("org.va.annotations.Repository")
 @SupportedSourceVersion(SourceVersion.RELEASE_22)
 @AutoService(Processor.class)
 public class RepositoryProcessor extends AbstractProcessor {
     @Override
     public boolean process(Set<? extends TypeElement> annotations, RoundEnvironment roundEnv) {
-        System.out.println("running Process==>");
         for (Element element : roundEnv.getElementsAnnotatedWith(Repository.class)) {
             String className = element.getSimpleName() + "Dao";
             String packageName = processingEnv.getElementUtils().getPackageOf(element).getQualifiedName().toString();
@@ -36,6 +36,9 @@ public class RepositoryProcessor extends AbstractProcessor {
         return true;
     }
 
+    /**
+     * Currently supports only simple class filed we can extend this code for more complex Table Structure
+     * */
     private void createDaoClass(Element element, String entityClassName, String packageName, String className) {
         System.out.println("calling create Dao element");
 
@@ -49,7 +52,6 @@ public class RepositoryProcessor extends AbstractProcessor {
                 .addParameter(ClassName.get("java.sql", "Connection"), "connection")
                 .addStatement("this.connection = connection")
                 .addStatement("createTableIfNotExists()")
-
                 .build();
 
         MethodSpec.Builder builder = MethodSpec.methodBuilder("create" + entityClassName)

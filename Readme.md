@@ -1,18 +1,30 @@
 # AnnotationMagic
 
-AnnotationMagic is a powerful tool for annotating and managing data. This project aims to simplify the process of adding annotations to various data types and integrating them into your workflow.
+Annotation Magic is a multi-module project designed to showcase the power of annotation processing. The project demonstrates multiple approaches to annotation processing, providing insights into the internal workings of tools like Lombok and Spring Boot.
+
 
 ## Features
 
-- Easy-to-use interface for adding annotations
-- Support for multiple data types
-- Integration with other tools and platforms
-- Customizable annotation options
+- Annotation Processing CompileTime and Runtime
+- Custom Code Generations
+- Showcasing internal working of Standard Tool like lombok or springboot
+- Developing Custom Java agent and its use cases.
 
 ## Prerequisites
 
 - Java 11 or higher
 - Maven 3.6.0 or higher
+
+## Current Annotations
+1. #### @Repository
+   Implementation is based of compile time code generations with JavaPoet and demonstrating basic sql operation code gen.
+2. #### @IsNumber
+   This processing is done on Runtime processing of annotations used for Validations. 
+3. #### @Id 
+   This is just helper annotations.
+4. #### @LogExecution
+   DEV IN PROGRESS
+
 
 ## Installation
 
@@ -36,4 +48,4 @@ To install AnnotationMagic, follow these steps:
 To start using AnnotationMagic, run the following command:
 
 ```bash
-mvn exec:java -Dexec.mainClass="org.va.Main"
+java -jar ./Service/target/Service-1.0-SNAPSHOT.jar
