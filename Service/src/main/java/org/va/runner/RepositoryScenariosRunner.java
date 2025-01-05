@@ -10,9 +10,12 @@ import java.sql.SQLException;
 public class RepositoryScenariosRunner implements Runnable {
     @Override
     public void run() {
+        /*
+        * change as your ENV
+        */
         String url = "jdbc:mysql://localhost:3306/test";
-        String username = "root";
-        String password = "root";
+        String username = "username";
+        String password = "password";
 
         try {
             Connection connection = DriverManager.getConnection(url, username, password);
@@ -28,6 +31,5 @@ public class RepositoryScenariosRunner implements Runnable {
             throw new RuntimeException(e);
         }
 
-// Use the connection to interact with the database
     }
 }
