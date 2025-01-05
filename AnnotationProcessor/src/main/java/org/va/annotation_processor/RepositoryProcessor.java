@@ -22,7 +22,7 @@ import java.util.stream.LongStream;
 
 
 @SupportedAnnotationTypes("org.va.annotations.Repository")
-@SupportedSourceVersion(SourceVersion.RELEASE_22)
+@SupportedSourceVersion(SourceVersion.RELEASE_8)
 @AutoService(Processor.class)
 public class RepositoryProcessor extends AbstractProcessor {
     @Override
