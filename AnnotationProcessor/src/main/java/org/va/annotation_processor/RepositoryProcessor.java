@@ -69,7 +69,7 @@ public class RepositoryProcessor extends AbstractProcessor {
                 .filter(e->e.getSimpleName().toString().startsWith("get"))
                 .forEach(e->builder.addStatement("stmt.setObject("
                         + cnt.incrementAndGet() +", entity."+e.getSimpleName().toString()+"())"));
-        MethodSpec createUser =
+        MethodSpec createEntity =
                 builder.addStatement("stmt.executeUpdate()")
         .endControlFlow()
                 .build();
@@ -117,7 +117,7 @@ public class RepositoryProcessor extends AbstractProcessor {
                 .addModifiers(Modifier.PUBLIC)
                 .addField(ClassName.get("java.sql", "Connection"), "connection", Modifier.PRIVATE, Modifier.FINAL)
                 .addMethod(constructor)
-                .addMethod(createUser)
+                .addMethod(createEntity)
                 .addMethod(createTableIfNotExists)
                 .addMethod(getEntity)
                 .build();
