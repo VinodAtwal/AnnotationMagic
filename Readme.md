@@ -14,6 +14,7 @@ Annotation Magic is a multi-module project designed to showcase the power of ann
 
 - Java 11 or higher
 - Maven 3.6.0 or higher
+- Running Mysql Server (Changes DB creds in Service/src/main/java/org/va/runner/RepositoryScenariosRunner.java )
 
 ## Current Annotations
 1. #### @Repository
