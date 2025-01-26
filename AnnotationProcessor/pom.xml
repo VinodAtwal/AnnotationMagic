@@ -34,11 +34,6 @@
             <artifactId>auto-service-annotations</artifactId>
             <version>1.1.1</version>
         </dependency>
-        <dependency>
-            <groupId>org.javassist</groupId>
-            <artifactId>javassist</artifactId>
-            <version>3.29.0-GA</version>
-        </dependency>
 
 
     </dependencies>
